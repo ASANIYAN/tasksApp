@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="./js/script.js"></script>
+    <title>Tasks</title>
+</head>
+<body>
+    <div id="coverCollection">
+    </div>
+    <header class="dash-header">
+        <section class="container-fluid">
+            <div class="row">
+                <div class="header-dash-content-hold pt-2">
+                    <a href="dashboard.html" id="head-dash">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mr-2 text-2xl text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+                        Dashboard
+                    </a>
+                    <a href="" id="head-account">
+                        <i class="fas fa-user-circle pt-2" id="dash_icon_head" style="font-size: 2em;"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+
+        <section class="collection-content">
+            <div class="container-fluid">
+                <div class="collectionNameHold">
+                    <div class="collectionNameHold2">
+                        <a href="dashboard.html" id="arrowHold">
+                            <i class="fas fa-chevron-left" id="arrow"></i>
+                        </a>
+                        <h1 class="collectionName-collection"></h1>
+                    </div>
+                    <div class="btn-mod-hold">
+                        <button class="btn-mod-collection">
+                            <svg id="mod-collection" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="collection-mod-hold">
+                    <section class="collection-mod">
+                        <div class="container-fluid">
+                            <div>
+                                <p id="editCollection">Edit Collection</p>
+                                <div style="height: 1px; width: 100%; background-color:rgba(0, 0, 0, 0.1);">
+                                </div>
+                                <p id="delCollection">Delete Collection</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="tasks">
+            <div class="container-fluid">
+                <div class="tasksHold">
+                    <p class="taskTxt"> Tasks - <span id="task-count"></span></p>
+
+                    <div class="taskInputFieldHold">
+                        <label for="taskInput" class="taskInputField mt-3">
+                            <div class="taskInputHold">
+                                <button id='btnInputTask' class="ms-2">
+                                    <i class="fas fa-plus plus"></i>
+                                </button>
+                                <input class="taskInputCollection" class="bg-transparent" id="taskInput" type="text" placeholder="Add task">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="completed">
+            <div class="container-fluid">
+                <div class="completedtasksHold">
+                    <p class="completedTxt"> Completed - <span id="completed-count"></span></p>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="signed-in" id="sign_in_hold">
+            <div class="container-fluid">
+                <div>
+                    <p style="font-size: 1.1rem;">Signed in as</p>
+                    <p id="signed-user" style="font-weight: bold; margin-top: -10px; font-size: 1.18rem;">Ayomide Paul Asaniyan</p>
+                </div>
+                <div style="height: 1px; width: 100%; background-color:rgba(0, 0, 0, 0.1);"></div>
+                <div class="mt-2">
+                    <a href="#" style="text-decoration: none; color: rgba(255, 255, 255, 0.5); font-size: 1.1rem;">
+                        Account setting
+                    </a>
+                </div>
+                <div class="mt-3" style="height: 1px; width: 100%; background-color:rgba(0, 0, 0, 0.1);"></div>
+                <div class="mt-2">
+                    <button id="sign-out" role="menuitem">
+                        Sign out
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="editTaskPop">
+            <div class="editTaskHold">
+                <div class="editHold">
+                    <h2 class="editTaskHead">Edit task</h2>
+                    <button class="btn"><i class="fas fa-times" id="X-editTask"></i></button>
+                </div>
+                <p class="newTask">New task</p>
+                <input type="text" placeholder="Do the dishes" id="newTaskInput">
+                <div class="btn-edit-options-hold mt-5">
+                    <button class="btn-edit-options me-3" id="btn-editTask">Edit</button>
+                    <button class="btn-edit-options me-3" id="btn-cancelTask">Cancel</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="popUpHold">
+            <div class="popUp">
+                <i class="fas fa-check-circle ps-3"></i>
+                <span class="ps-2 successText"> </span>
+            </div>
+        </div>
+
+        <section class="collection" id="collection">
+            <form>
+                <div class="collectionhead-hold">
+                    <h3 class="collectionhead ps-4 pt-4">Add Collection</h3>
+                    <button class="btn btn-X pe-4" type="button"><i class="fas fa-times pt-1" id="X"></i></button>
+                </div>
+                <div class="mt-3">
+                    <label for="collectionName" class="form-label name-label ps-4">Name</label>
+                    <input type="text" id="collectionName" name="collectionName" class="form-control" placeholder="My Collection" aria-label="collection-Name">
+                </div>
+                <div class="mt-3">
+                    <label for="collectionColor" class="form-check-label label-color ps-4">Color</label>
+                    <div class="radio-hold mt-1">
+                        <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#FC76A1" id="first">
+                        <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#DBBE56" id="second">
+                        <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#E39264" id="third">
+                        <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#D25A61" id="fourth">
+                        <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#AE68E6" id="fifth">
+                        <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#70C4BF" id="sixth">
+                        <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#9E7F72" id="seventh">
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label for="customColor" class="label-custom ps-4">Custom color</label>
+                    <input type="color" name="customColor" class="form-control form-control-color color-Select mt-2 ms-4" id="customColor" value="#fc76a1" title="Choose your color">
+                </div>
+                <div class="btn-hold mt-3">
+                    <button class="btn me-3" type="button" id="btn-update">Update</button>
+                    <button class="btn me-3" type="button" id="btn-cancel">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+
+    <footer class="dash-footer">
+        <section class="container-fluid">
+            <div class="row">
+                <div class="foot-dash-content-hold pt-3">
+                    <a href="dashboard.html" id="dash-dash">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mr-2 text-2xl text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+                        Dashboard
+                    </a>
+                    <a href="" id="dash-account">
+                        <i class="fas fa-user-circle" style="font-size: 1.5em;"></i>
+                        Account
+                    </a>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script>
+
+        function signOut() {
+            let signedOut = document.querySelector('#sign-out');
+            let users = JSON.parse(localStorage.getItem('users'));
+            signedOut.addEventListener('click', function(e) {
+                users.forEach(data => {
+                    if (data.session == true) {
+                        data.session = false;
+                    }
+                });
+                localStorage.setItem('users', JSON.stringify(users));
+                location.href = 'index.html';
+             });
+            }
+            signOut();
+
+            function collectionNameDisplay() {
+                let collectionName_Collection = document.querySelector('.collectionName-collection');
+                let users = JSON.parse(localStorage.getItem('users'));
+                let clicked = JSON.parse(localStorage.getItem('clicked'));
+                users.forEach(data => {
+                    if (data.session == true) {
+                        let collections = data.collections;
+                        collections.forEach(items => {
+                            items.forEach(eachItem => {
+                                if (eachItem[Object.keys(eachItem)[0]] == clicked) {
+                                    collectionName_Collection.innerText = eachItem[Object.keys(eachItem)[1]];
+                                }
+                            })
+                        });
+                    }
+                });
+            }
+
+            collectionNameDisplay();
+
+
+        let bodyCollection = document.querySelector('body');
+        let collectionModContent = document.querySelector('.collection-mod');
+        let coverCollection = document.querySelector('#coverCollection');
+
+        function showCollectionModContent() {
+            bodyCollection.addEventListener('click', function (e) {
+                if (!e.target.closest(".collection-mod") && e.target.id !== 'mod-collection') {
+                    collectionModContent.classList.remove('showMod');
+                }
+            })
+
+            let modCollections = document.querySelector('#mod-collection');
+            modCollections.addEventListener('click', function(e) {
+                e.preventDefault();
+                collectionModContent.classList.toggle('showMod');
+            })
+        }
+
+        showCollectionModContent();
+
+
+        let editCollection = document.querySelector('#editCollection');
+        function createEditCollectionTab() {
+            let cover = document.querySelector('#cover');
+            let collection = document.querySelector('#collection');
+            editCollection.addEventListener('click', function (e) {
+                collection.classList.add('visibility');
+                coverCollection.classList.add('coverCollection');
+                bodyCollection.style.overflow='hidden';
+                collectionModContent.classList.remove('showMod');
+            })
+            coverCollection.addEventListener('click', function (e) {
+                collection.classList.remove('visibility');
+                coverCollection.classList.remove('coverCollection');
+                bodyCollection.style.overflow='auto';
+            })
+
+            let btn_cancel = document.querySelector('#btn-cancel');
+            btn_cancel.addEventListener('click', function(e) {
+                e.preventDefault();
+                collection.classList.remove('visibility');
+                coverCollection.classList.remove('coverCollection');
+                bodyCollection.style.overflow='auto';
+            })
+
+            let btn_X = document.querySelector('#X');
+            btn_X.addEventListener('click', function (e) {
+                e.preventDefault();
+                collection.classList.remove('visibility');
+                coverCollection.classList.remove('coverCollection');
+                bodyCollection.style.overflow='auto';
+            })
+
+            let collectionColor = document.getElementsByName('collectionColor');
+            let first = document.querySelector('#first');
+            let second = document.querySelector('#second');
+            let third = document.querySelector('#third');
+            let fourth = document.querySelector('#fourth');
+            let fifth = document.querySelector('#fifth');
+            let sixth = document.querySelector('#sixth');
+            let seventh = document.querySelector('#seventh');
+            let customColor = document.querySelector('#customColor');
+
+            window.addEventListener('load', function(e) {
+                first.style.background = first.value;
+                first.checked = true;
+                first.classList.add('clicked');
+            })
+
+            first.addEventListener('click', function(e) {
+                first.style.background = first.value;
+                first.classList.add('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                second.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            second.addEventListener('click', function(e) {
+                second.style.background = second.value;
+                second.classList.add('clicked');
+                first.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            third.addEventListener('click', function(e) {
+                third.style.background = third.value;
+                third.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                second.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            fourth.addEventListener('click', function(e) {
+                fourth.style.background = fourth.value;
+                fourth.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                second.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            fifth.addEventListener('click', function(e) {
+                fifth.style.background = fifth.value;
+                fifth.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                second.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            sixth.addEventListener('click', function(e) {
+                sixth.style.background = sixth.value;
+                sixth.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                second.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            seventh.addEventListener('click', function(e) {
+                seventh.style.background = seventh.value;
+                seventh.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                second.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+            })
+
+            customColor.addEventListener('click', function(e) {
+                customColor.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+            })
+
+        }
+
+        createEditCollectionTab();
+
+
+
+        function updateCollection() {
+            let btnUpdate = document.querySelector('#btn-update');
+            let completedBtnCollectionCheck = document.querySelectorAll('.completed-btn-collection-check');
+            let btnCollectionCheck = document.querySelectorAll('.btn-collection-check');
+            let btnInputTask = document.querySelector('#btnInputTask');
+
+            btnUpdate.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (document.querySelector('#collectionName').value == '') {
+                    document.querySelector('#collectionName').style.border = '3px solid blue';
+                } else {
+                    let collectionName_Collection = document.querySelector('.collectionName-collection');
+                    collectionName_Collection.innerText = document.querySelector('#collectionName').value;
+                    let users = JSON.parse(localStorage.getItem('users'));
+                    let clicked = JSON.parse(localStorage.getItem('clicked'));
+                    users.forEach(data => {
+                        if (data.session == true) {
+                            let collections = data.collections;
+                            collections.forEach(items => {
+                                items.forEach(eachItem => {
+                                    if (eachItem[Object.keys(eachItem)[0]] == clicked) {
+                                        eachItem[Object.keys(eachItem)[1]] =  document.querySelector('#collectionName').value;
+                                        eachItem[Object.keys(eachItem)[2]] =  document.querySelector('.clicked').value;
+                                    }
+                                })
+                            });
+                        }
+                    });
+                    localStorage.setItem('users', JSON.stringify(users));
+
+                    collection.classList.remove('visibility');
+                    coverCollection.classList.remove('coverCollection');
+                    bodyCollection.style.overflow='auto';
+                }
+
+                completedBtnCollectionCheck.forEach((eachCheck) => {
+                    eachCheck.style.borderColor = document.querySelector('.clicked').value;
+                    eachCheck.style.backgroundColor = document.querySelector('.clicked').value;
+                });
+
+                btnCollectionCheck.forEach((eachCheck) => {
+                    eachCheck.style.borderColor = document.querySelector('.clicked').value;
+                });
+
+                btnInputTask.style.backgroundColor = document.querySelector('.clicked').value;
+                btnInputTask.style.borderColor = document.querySelector('.clicked').value;
+
+
+            });
+        }
+
+        updateCollection();
+
+        function deleteCollection() {
+            let delCollection = document.querySelector('#delCollection');
+            delCollection.addEventListener('click', function(e) {
+                let users = JSON.parse(localStorage.getItem('users'));
+                    let clicked = JSON.parse(localStorage.getItem('clicked'));
+                    users.forEach(data => {
+                        if (data.session == true) {
+                            let collections = data.collections;
+                            collections.forEach(items => {
+                                items.forEach(eachItem => {
+                                    if (eachItem[Object.keys(eachItem)[0]] == clicked) {
+                                        const index = items.indexOf(eachItem);
+                                        items.splice(index, 1);
+                                        location.href = 'dashboard.html';
+                                    }
+                                })
+                            });
+                        }
+                    });
+                    localStorage.setItem('users', JSON.stringify(users));
+            })
+        }
+
+        deleteCollection();
+
+
+        function createdMod() {
+            let taskCreatedMod = document.querySelectorAll('.taskCreatedMod');
+            let taskMod = document.querySelectorAll('.btn-task-mod');
+            let loopTaskMod = document.querySelectorAll('.btn-task-mod');
+            taskMod.forEach((i) => {
+                i.addEventListener('click', function(e) {
+                    const clickedTaskMod = [...taskMod].indexOf(e.currentTarget);
+                taskCreatedMod.forEach((eachMod) => {
+                    eachMod.classList.remove('showCreatedMod');
+                })
+                e.currentTarget.classList.add('clicked');
+                if (e.target.classList.contains('btn-task-mod')) {
+                    taskCreatedMod[clickedTaskMod].classList.add('showCreatedMod');
+                } else if (e.target.id == 'task-mod') {
+                    taskCreatedMod[clickedTaskMod].classList.add('showCreatedMod');
+                } else if (e.target.classList.contains('circle')) {
+                    taskCreatedMod[clickedTaskMod].classList.add('showCreatedMod');
+                }
+
+                });
+
+            });
+            bodyCollection.addEventListener('click', function (e) {
+                if (!e.target.closest(".taskCreatedMod") && e.target.id !== 'task-mod' && !e.target.classList.contains('btn-task-mod') && !e.target.classList.contains('circle')) {
+                    taskCreatedMod.forEach((taskCreatedMod) => {
+                        taskCreatedMod.classList.remove('showCreatedMod');
+                    });
+                }
+            })
+
+        }
+
+        createdMod();
+
+        function updateTaskCount() {
+            let btnContentModHold = document.querySelectorAll('.btnContentModHold');
+            let taskCount = document.querySelector('#task-count');
+            taskCount.innerText = btnContentModHold.length;
+        }
+        updateTaskCount();
+
+
+        let selectedTask;
+        function editPop() {
+            let editTaskPop = document.querySelector('.editTaskPop');
+            let editTask = document.querySelectorAll('.editTask');
+            let btnCancelTask = document.querySelector('#btn-cancelTask');
+            let X_EditTask = document.querySelector('#X-editTask');
+            editTask.forEach((eachEditTask) => {
+                eachEditTask.addEventListener('click', function(e) {
+                    selectedTask = eachEditTask.parentElement.parentElement.parentElement.dataset.id;
+                    coverCollection.classList.add('coverCollection');
+                    editTaskPop.classList.add('editTaskPopShow');
+                    eachEditTask.parentElement.classList.remove('showCreatedMod');
+                    bodyCollection.style.overflow='hidden';
+                })
+            });
+            coverCollection.addEventListener('click', function(e) {
+                bodyCollection.style.overflow='auto';
+                editTaskPop.classList.remove('editTaskPopShow');
+                coverCollection.classList.remove('coverCollection');
+            })
+            btnCancelTask.addEventListener('click', function(e) {
+                bodyCollection.style.overflow='auto';
+                editTaskPop.classList.remove('editTaskPopShow');
+                coverCollection.classList.remove('coverCollection');
+            })
+            X_EditTask.addEventListener('click', function(e) {
+                bodyCollection.style.overflow='auto';
+                editTaskPop.classList.remove('editTaskPopShow');
+                coverCollection.classList.remove('coverCollection');
+            })
+        }
+
+        editPop();
+
+        function updateEachTask() {
+            let btnEditTask = document.querySelector('#btn-editTask');
+            let newTaskInput = document.querySelector('#newTaskInput');
+            let editTaskPop = document.querySelector('.editTaskPop');
+
+            btnEditTask.addEventListener('click', function(e) {
+                if (newTaskInput.value == '') {
+                    newTaskInput.style.border = '3px solid blue';
+                } else {
+                    let allTask = document.querySelectorAll('.btnContentAndTaskHold');
+                    allTask.forEach(eachTask => {
+                        if (eachTask.dataset.id == selectedTask) {
+                            eachTask.querySelector('.inputContent').innerText = newTaskInput.value;
+                            bodyCollection.style.overflow='auto';
+                            editTaskPop.classList.remove('editTaskPopShow');
+                            coverCollection.classList.remove('coverCollection');
+                            showPopUp('Edit Completed!');
+                            setTimeout('removePopUp()', 2000);
+
+                            let users = JSON.parse(localStorage.getItem('users'));
+                            let clicked = JSON.parse(localStorage.getItem('clicked'));
+                            users.forEach(data => {
+                                if (data.session == true) {
+                                    let collections = data.collections;
+                                    collections.forEach(items => {
+                                        items.forEach(eachItem => {
+                                            if (eachItem[Object.keys(eachItem)[0]] == clicked) {
+                                                let todoContent = eachItem[Object.keys(eachItem)[3]];
+                                                todoContent.forEach(eachArrray => {
+                                                    eachArrray.forEach(eachContent => {
+                                                        if (eachContent[Object.keys(eachContent)[0]] == selectedTask) {
+                                                            eachContent[Object.keys(eachContent)[1]] = newTaskInput.value;
+                                                        }
+                                                    });
+                                                });
+
+                                            }
+                                        })
+                                    });
+                                }
+                            });
+                            localStorage.setItem('users', JSON.stringify(users));
+
+                        }
+                    });
+                }
+
+            });
+
+        }
+
+        updateEachTask();
+
+        function deleteEachTask() {
+            let delBtn = document.querySelectorAll('.delete');
+            let selectedId;
+            delBtn.forEach(eachdelBtn => {
+                eachdelBtn.addEventListener('click', function(e) {
+                    selectedId = eachdelBtn.parentElement.parentElement.parentElement.dataset.id;
+                    let users = JSON.parse(localStorage.getItem('users'));
+                    let clicked = JSON.parse(localStorage.getItem('clicked'));
+                    let delParentNode = eachdelBtn.parentElement.parentElement.parentElement;
+                    delParentNode.remove();
+
+                    users.forEach(data => {
+                                if (data.session == true) {
+                                    let collections = data.collections;
+                                    collections.forEach(items => {
+                                        items.forEach(eachItem => {
+                                            if (eachItem[Object.keys(eachItem)[0]] == clicked) {
+                                                let todoContent = eachItem[Object.keys(eachItem)[3]];
+                                                todoContent.forEach(eachArrray => {
+                                                    eachArrray.forEach(eachContent => {
+                                                        if (eachContent[Object.keys(eachContent)[0]] == selectedId) {
+                                                            const index = eachArrray.indexOf(eachContent);
+                                                            eachArrray.splice(index,1);
+                                                        }
+                                                    });
+                                                });
+
+                                            }
+                                        })
+                                    });
+                                }
+                            });
+                            localStorage.setItem('users', JSON.stringify(users));
+                            updateTaskCount();
+                            updateCompletedCount();
+                });
+            });
+        }
+
+
+
+        function completedMod() {
+            let completedCreatedMod = document.querySelectorAll('.completedCreatedMod');
+            let completedTaskMod = document.querySelectorAll('.completed-btn-task-mod');
+
+            completedTaskMod.forEach((i) => {
+                i.addEventListener('click', function(e) {
+                    const clickedCompletedTaskMod = [...completedTaskMod].indexOf(e.currentTarget);
+                completedCreatedMod.forEach((eachMod) => {
+                    eachMod.classList.remove('showCreatedMod');
+                })
+                e.currentTarget.classList.add('clicked');
+                if (e.target.classList.contains('completed-btn-task-mod')) {
+                    completedCreatedMod[clickedCompletedTaskMod].classList.add('showCreatedMod');
+                } else if (e.target.id == 'completed-mod') {
+                    completedCreatedMod[clickedCompletedTaskMod].classList.add('showCreatedMod');
+                } else if (e.target.classList.contains('circle')) {
+                    completedCreatedMod[clickedCompletedTaskMod].classList.add('showCreatedMod');
+                }
+
+                });
+
+            });
+
+            bodyCollection.addEventListener('click', function (e) {
+                if (!e.target.closest(".completedCreatedMod") && e.target.id !== 'completed-mod' && !e.target.classList.contains('completed-btn-task-mod')  && !e.target.classList.contains('circle')) {
+                    completedCreatedMod.forEach((eachMod) => {
+                        eachMod.classList.remove('showCreatedMod');
+
+                    });
+                }
+            })
+        }
+
+        completedMod();
+
+
+        function createTask() {
+            let todos = [];
+            let btnInputTask = document.querySelector('#btnInputTask');
+            let taskInput = document.querySelector('#taskInput');
+            let taskInputFieldHold = document.querySelector('.taskInputFieldHold');
+            const tasksHold = taskInputFieldHold.parentNode;
+            let inputTaskCount = 0;
+            btnInputTask.addEventListener('click', function(e) {
+                if (taskInput.value == "") {
+
+                }else {
+                    let btnContentAndTaskHold = document.querySelectorAll('.btnContentAndTaskHold');
+                    let clicked = JSON.parse(localStorage.getItem('clicked'));
+                    let users = JSON.parse(localStorage.getItem('users'));
+                    //let btnContentAndTaskHoldLength = btnContentAndTaskHold.length;
+
+                    users.forEach(data => {
+                        if (data.session == true) {
+                            let collections = data.collections;
+                            collections.forEach(items => {
+                                items.forEach(eachItem => {
+                                    if (eachItem[Object.keys(eachItem)[0]] == clicked) {
+                                        if (!eachItem[Object.keys(eachItem)[3]].length) {
+                                            let itemLength = eachItem[Object.keys(eachItem)[3]].length;
+                                            itemLength++;
+                                            //localStorage.setItem('incrementId', JSON.stringify(itemLength));
+
+                                            todos = [{
+                                                id: itemLength,
+                                                todo: taskInput.value,
+                                                done: false
+                                            }]
+                                            eachItem[Object.keys(eachItem)[3]].push(todos);
+
+                                            const createBtnContentAndTaskHold = document.createElement('div');
+                                            createBtnContentAndTaskHold.classList.add('btnContentAndTaskHold');
+                                            createBtnContentAndTaskHold.dataset.id = itemLength;
+                                            const createBtnContentModHold = document.createElement('div');
+                                            createBtnContentModHold.classList.add('btnContentModHold');
+                                            const createBtnContentHold = document.createElement('div');
+                                            createBtnContentHold.classList.add('btnContentHold');
+                                            const createBtnCollectionCheck = document.createElement('button');
+                                            createBtnCollectionCheck.classList.add('btn-collection-check', 'ms-3');
+                                            createBtnCollectionCheck.style.border = '3px solid' + eachItem[Object.keys(eachItem)[2]];
+                                            createBtnContentHold.append(createBtnCollectionCheck);
+                                            const createInputContent = document.createElement('p');
+                                            createInputContent.classList.add('inputContent', 'ps-3');
+                                            createInputContent.innerText = taskInput.value;
+                                            createBtnContentHold.append(createInputContent);
+                                            createBtnContentModHold.append(createBtnContentHold);
+                                            const btnTaskModHold = document.createElement('div');
+                                            const btnTaskMod = document.createElement('button');
+                                            btnTaskMod.classList.add('btn-task-mod','ease-in-out', 'opacity-50');
+                                            btnTaskMod.innerHTML =
+                                            `<svg id="task-mod" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                            <circle class="circle" cx="12" cy="12" r="1"></circle>
+                                            <circle class="circle" cx="12" cy="5" r="1"></circle>
+                                            <circle class="circle" cx="12" cy="19" r="1"></circle>
+                                            </svg>`;
+                                            btnTaskModHold.append(btnTaskMod);
+                                            createBtnContentModHold.append(btnTaskModHold);
+
+                                            const createTaskCreatedModHold = document.createElement('div');
+                                            createTaskCreatedModHold.classList.add('taskCreatedModHold');
+
+                                            const createTaskCreatedMod = document.createElement('div');
+                                            createTaskCreatedMod.classList.add('taskCreatedMod');
+
+                                            const createEditTask = document.createElement('p');
+                                            createEditTask.classList.add('editTask');
+                                            createEditTask.innerText = 'Edit';
+                                            createTaskCreatedMod.append(createEditTask);
+
+                                            const createLine = document.createElement('div');
+                                            createLine.style.height = '1px';
+                                            createLine.style.width = '100%';
+                                            createLine.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                                            createTaskCreatedMod.append(createLine);
+
+                                            const createDelTask = document.createElement('p');
+                                            createDelTask.classList.add('delTask', 'delete');
+                                            createDelTask.innerText = 'Delete';
+                                            createTaskCreatedMod.append(createDelTask);
+                                            createTaskCreatedModHold.append(createTaskCreatedMod);
+
+                                            createBtnContentAndTaskHold.append(createBtnContentModHold);
+                                            createBtnContentAndTaskHold.append(createTaskCreatedModHold);
+                                            tasksHold.insertBefore(createBtnContentAndTaskHold, taskInputFieldHold);
+                                            //console.log(todos);
+                                        } else {
+                                            let todoLength = eachItem[Object.keys(eachItem)[3]].length;
+                                            ++todoLength;
+                                                todos = [{
+                                                    id: todoLength,
+                                                    todo: taskInput.value,
+                                                    done: false
+                                                }]
+                                                eachItem[Object.keys(eachItem)[3]].push(todos);
+
+                                                const createBtnContentAndTaskHold = document.createElement('div');
+                                                createBtnContentAndTaskHold.classList.add('btnContentAndTaskHold');
+                                                createBtnContentAndTaskHold.dataset.id = todoLength;
+                                                const createBtnContentModHold = document.createElement('div');
+                                                createBtnContentModHold.classList.add('btnContentModHold');
+                                                const createBtnContentHold = document.createElement('div');
+                                                createBtnContentHold.classList.add('btnContentHold');
+                                                const createBtnCollectionCheck = document.createElement('button');
+                                                createBtnCollectionCheck.classList.add('btn-collection-check', 'ms-3');
+                                                createBtnCollectionCheck.style.border = '3px solid' + eachItem[Object.keys(eachItem)[2]];
+                                                createBtnContentHold.append(createBtnCollectionCheck);
+                                                const createInputContent = document.createElement('p');
+                                                createInputContent.classList.add('inputContent', 'ps-3');
+                                                createInputContent.innerText = taskInput.value;
+                                                createBtnContentHold.append(createInputContent);
+                                                createBtnContentModHold.append(createBtnContentHold);
+                                                const btnTaskModHold = document.createElement('div');
+                                                const btnTaskMod = document.createElement('button');
+                                                btnTaskMod.classList.add('btn-task-mod','ease-in-out', 'opacity-50');
+                                                btnTaskMod.innerHTML =
+                                                `<svg id="task-mod" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <circle class="circle" cx="12" cy="12" r="1"></circle>
+                                                <circle class="circle" cx="12" cy="5" r="1"></circle>
+                                                <circle class="circle" cx="12" cy="19" r="1"></circle>
+                                                </svg>`;
+                                                btnTaskModHold.append(btnTaskMod);
+                                                createBtnContentModHold.append(btnTaskModHold);
+
+                                                const createTaskCreatedModHold = document.createElement('div');
+                                                createTaskCreatedModHold.classList.add('taskCreatedModHold');
+
+                                                const createTaskCreatedMod = document.createElement('div');
+                                                createTaskCreatedMod.classList.add('taskCreatedMod');
+
+                                                const createEditTask = document.createElement('p');
+                                                createEditTask.classList.add('editTask');
+                                                createEditTask.innerText = 'Edit';
+                                                createTaskCreatedMod.append(createEditTask);
+
+                                                const createLine = document.createElement('div');
+                                                createLine.style.height = '1px';
+                                                createLine.style.width = '100%';
+                                                createLine.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                                                createTaskCreatedMod.append(createLine);
+
+                                                const createDelTask = document.createElement('p');
+                                                createDelTask.classList.add('delTask', 'delete');
+                                                createDelTask.innerText = 'Delete';
+                                                createTaskCreatedMod.append(createDelTask);
+                                                createTaskCreatedModHold.append(createTaskCreatedMod);
+
+                                                createBtnContentAndTaskHold.append(createBtnContentModHold);
+                                                createBtnContentAndTaskHold.append(createTaskCreatedModHold);
+                                                tasksHold.insertBefore(createBtnContentAndTaskHold, taskInputFieldHold);
+                                                //console.log(todos);
+                                        }
+
+                                    }
+                                });
+                            });
+                        }
+                    });
+                    localStorage.setItem('users', JSON.stringify(users));
+
+
+                }
+                createdMod();
+                editPop();
+                updateTaskCount();
+                taskCheck();
+                completedUncheck();
+                deleteEachTask();
+            });
+            taskInput.addEventListener('keyup', function(e) {
+                if (e.keyCode === 13) {
+                    e.preventDefault();
+                    btnInputTask.click();
+                }
+            })
+
+        }
+
+        createTask();
+
+        function updateCompletedCount() {
+            let completedbtnContentModHold = document.querySelectorAll('.completedbtnContentModHold');
+            let completedCount = document.querySelector('#completed-count');
+            completedCount.innerText = completedbtnContentModHold.length;
+        }
+
+        updateCompletedCount();
+
+
+        function showPopUp(text) {
+            let popUpHold = document.querySelector('.popUpHold');
+            let successText = document.querySelector('.successText');
+            successText.innerText = text;
+            popUpHold.style.top = '0';
+        }
+
+        function removePopUp() {
+            let popUpHold = document.querySelector('.popUpHold');
+            popUpHold.style.top = '-30%';
+        }
+
+        function taskCheck() {
+            const completedtasksHold = document.querySelector('.completedtasksHold');
+            let btnCollectionCheck = document.querySelectorAll('.btn-collection-check');
+            btnCollectionCheck.forEach((eachCheck) => {
+                eachCheck.addEventListener('click', function(e) {
+                    let inputContentText = eachCheck.parentElement.querySelector('.inputContent').innerText;
+
+                    let id = eachCheck.parentElement.parentElement.parentElement.dataset.id;
+                    let users = JSON.parse(localStorage.getItem('users'));
+                    let clicked = JSON.parse(localStorage.getItem('clicked'));
+                    let boolean;
+                    let color;
+
+                    users.forEach(data => {
+                        if (data.session == true) {
+                            let collections = data.collections;
+                            collections.forEach(items => {
+                                items.forEach(eachItem => {
+                                    if (eachItem[Object.keys(eachItem)[0]] == clicked) {
+                                        color = eachItem[Object.keys(eachItem)[2]];
+                                        console.log(color);
+
+                                        let todoContent = eachItem[Object.keys(eachItem)[3]];
+                                        todoContent.forEach(eachArrray => {
+                                            eachArrray.forEach(eachContent => {
+                                                if (eachContent[Object.keys(eachContent)[0]] == id) {
+                                                    eachContent[Object.keys(eachContent)[2]] = true;
+                                                    boolean = eachContent[Object.keys(eachContent)[2]];
+                                                }
+                                            });
+                                        });
+                                    }
+                                })
+                            });
+                        }
+                     });
+                    localStorage.setItem('users', JSON.stringify(users));
+
+                    const createCompletedCreatedContentAndDelHold = document.createElement('div');
+                    createCompletedCreatedContentAndDelHold.classList.add('completedCreatedContentAndDelHold');
+                    createCompletedCreatedContentAndDelHold.dataset.id = eachCheck.parentElement.parentElement.parentElement.dataset.id;
+
+                    const createCompletedbtnContentModHold = document.createElement('div');
+                    createCompletedbtnContentModHold.classList.add('completedbtnContentModHold');
+                    createCompletedCreatedContentAndDelHold.append(createCompletedbtnContentModHold);
+
+                    const createCompletedbtnContentHold = document.createElement('div');
+                    createCompletedbtnContentHold.classList.add('completedbtnContentHold');
+                    createCompletedbtnContentModHold.append(createCompletedbtnContentHold);
+
+                    const createCompletedBtnCollectionCheck = document.createElement('i');
+                    createCompletedBtnCollectionCheck.classList.add('fas', 'fa-check', 'completed-btn-collection-check', 'iconCheck', 'ms-3');
+                    createCompletedBtnCollectionCheck.style.border = '3px solid' + color;
+                    createCompletedBtnCollectionCheck.style.backgroundColor = color;
+                    createCompletedbtnContentHold.append(createCompletedBtnCollectionCheck);
+
+                    const createCompletedInputContent = document.createElement('p');
+                    createCompletedInputContent.innerText = inputContentText;
+                    createCompletedInputContent.classList.add('completedInputContent', 'line-through', 'ps-3');
+                    createCompletedbtnContentHold.append(createCompletedInputContent);
+
+                    const completedBtnModHold = document.createElement('div');
+                    createCompletedbtnContentModHold.append(completedBtnModHold);
+
+                    const createdCompletedBtnTaskMod = document.createElement('button');
+                    createdCompletedBtnTaskMod.classList.add('completed-btn-task-mod', 'ease-in-out', 'opacity-50');
+                    createdCompletedBtnTaskMod.innerHTML =
+                    `<svg id="completed-mod" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="circle" cx="12" cy="12" r="1"></circle>
+                    <circle class="circle" cx="12" cy="5" r="1"></circle>
+                    <circle class="circle" cx="12" cy="19" r="1"></circle>
+                    </svg>`;
+                    completedBtnModHold.appendChild(createdCompletedBtnTaskMod);
+
+                    const createCompletedCreatedModHold = document.createElement('div');
+                    createCompletedCreatedModHold.classList.add('completedCreatedModHold');
+
+
+                    const createCompletedCreatedMod = document.createElement('div');
+                    createCompletedCreatedMod.classList.add('completedCreatedMod');
+                    createCompletedCreatedModHold.append(createCompletedCreatedMod);
+
+                    const createDelCompleted = document.createElement('p');
+                    createDelCompleted.classList.add('delCompleted', 'delete');
+                    createDelCompleted.innerText = 'Delete';
+                    createCompletedCreatedMod.append(createDelCompleted);
+
+                    createCompletedCreatedContentAndDelHold.append(createCompletedCreatedModHold);
+                    completedtasksHold.append(createCompletedCreatedContentAndDelHold);
+
+                    let btnContentAndTaskHold = eachCheck.parentElement.parentElement.parentElement;
+                    btnContentAndTaskHold.remove();
+
+
+
+
+                    createdMod();
+                    completedMod();
+                    updateTaskCount();
+                    updateCompletedCount();
+                    showPopUp('Task Completed!');
+                    setTimeout('removePopUp()', 2000);
+                    editPop();
+                    completedUncheck();
+                    deleteEachTask();
+                });
+            });
+        }
+        taskCheck();
+
+        function completedUncheck() {
+            let completedBtnCollectionCheck = document.querySelectorAll('.completed-btn-collection-check');
+            let taskInputFieldHold = document.querySelector('.taskInputFieldHold');
+            const tasksHold = taskInputFieldHold.parentNode;
+
+            completedBtnCollectionCheck.forEach(eachUncheck => {
+                eachUncheck.addEventListener('click', function(e) {
+                    let completedInputContentText = eachUncheck.parentElement.querySelector('.completedInputContent').innerText;
+
+                    let id = eachUncheck.parentElement.parentElement.parentElement.dataset.id;
+                    let users = JSON.parse(localStorage.getItem('users'));
+                    let clicked = JSON.parse(localStorage.getItem('clicked'));
+                    let boolean;
+                    let color;
+
+                    users.forEach(data => {
+                        if (data.session == true) {
+                            let collections = data.collections;
+                            collections.forEach(items => {
+                                items.forEach(eachItem => {
+                                    if (eachItem[Object.keys(eachItem)[0]] == clicked) {
+                                        color = eachItem[Object.keys(eachItem)[2]];
+
+                                        let todoContent = eachItem[Object.keys(eachItem)[3]];
+                                        todoContent.forEach(eachArrray => {
+                                            eachArrray.forEach(eachContent => {
+                                                if (eachContent[Object.keys(eachContent)[0]] == id) {
+                                                    eachContent[Object.keys(eachContent)[2]] = false;
+                                                    boolean = eachContent[Object.keys(eachContent)[2]];
+                                                }
+                                            });
+                                        });
+                                    }
+                                })
+                            });
+                        }
+                     });
+                    localStorage.setItem('users', JSON.stringify(users));
+
+
+                    const createBtnContentAndTaskHold = document.createElement('div');
+                    createBtnContentAndTaskHold.classList.add('btnContentAndTaskHold');
+                    createBtnContentAndTaskHold.dataset.id = eachUncheck.parentElement.parentElement.parentElement.dataset.id;
+                    const createBtnContentModHold = document.createElement('div');
+                    createBtnContentModHold.classList.add('btnContentModHold');
+                    const createBtnContentHold = document.createElement('div');
+                    createBtnContentHold.classList.add('btnContentHold');
+                    const createBtnCollectionCheck = document.createElement('button');
+                    createBtnCollectionCheck.classList.add('btn-collection-check', 'ms-3');
+                    createBtnCollectionCheck.style.border = '3px solid' + color;
+                    createBtnContentHold.append(createBtnCollectionCheck);
+                    const createInputContent = document.createElement('p');
+                    createInputContent.classList.add('inputContent', 'ps-3');
+                    createInputContent.innerText = completedInputContentText;
+                    createBtnContentHold.append(createInputContent);
+                    createBtnContentModHold.append(createBtnContentHold);
+                    const btnTaskModHold = document.createElement('div');
+                    const btnTaskMod = document.createElement('button');
+                    btnTaskMod.classList.add('btn-task-mod','ease-in-out', 'opacity-50');
+                    btnTaskMod.innerHTML =
+                    `<svg id="task-mod" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="circle" cx="12" cy="12" r="1"></circle>
+                        <circle class="circle" cx="12" cy="5" r="1"></circle>
+                    <circle class="circle" cx="12" cy="19" r="1"></circle>
+                    </svg>`;
+                    btnTaskModHold.append(btnTaskMod);
+                    createBtnContentModHold.append(btnTaskModHold);
+
+                    const createTaskCreatedModHold = document.createElement('div');
+                    createTaskCreatedModHold.classList.add('taskCreatedModHold');
+
+                    const createTaskCreatedMod = document.createElement('div');
+                    createTaskCreatedMod.classList.add('taskCreatedMod');
+
+                    const createEditTask = document.createElement('p');
+                    createEditTask.classList.add('editTask');
+                    createEditTask.innerText = 'Edit';
+                    createTaskCreatedMod.append(createEditTask);
+
+                    const createLine = document.createElement('div');
+                    createLine.style.height = '1px';
+                    createLine.style.width = '100%';
+                    createLine.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                    createTaskCreatedMod.append(createLine);
+
+                    const createDelTask = document.createElement('p');
+                    createDelTask.classList.add('delTask', 'delete');
+                    createDelTask.innerText = 'Delete';
+                    createTaskCreatedMod.append(createDelTask);
+                    createTaskCreatedModHold.append(createTaskCreatedMod);
+
+                    createBtnContentAndTaskHold.append(createBtnContentModHold);
+                    createBtnContentAndTaskHold.append(createTaskCreatedModHold);
+                    tasksHold.insertBefore(createBtnContentAndTaskHold, taskInputFieldHold);
+
+                    let completedCreatedContentAndDelHold = eachUncheck.parentElement.parentElement.parentElement;
+                    completedCreatedContentAndDelHold.remove();
+
+
+
+                    createdMod();
+                    completedMod();
+                    taskCheck();
+                    editPop();
+                    updateTaskCount();
+                    updateCompletedCount();
+                    deleteEachTask();
+                })
+            });
+        }
+
+        completedUncheck();
+
+
+        function showUnChecked() {
+            let users = JSON.parse(localStorage.getItem('users'));
+            let clicked = JSON.parse(localStorage.getItem('clicked'));
+            let taskInputFieldHold = document.querySelector('.taskInputFieldHold');
+            const tasksHold = taskInputFieldHold.parentNode;
+
+                    users.forEach(data => {
+                        if (data.session == true) {
+                            let collections = data.collections;
+                            collections.forEach(items => {
+                                items.forEach(eachItem => {
+                                    if (eachItem[Object.keys(eachItem)[0]] == clicked) {
+                                        let todoContent = eachItem[Object.keys(eachItem)[3]];
+                                        todoContent.forEach(eachArrray => {
+                                            eachArrray.forEach(eachContent => {
+                                                if (eachContent[Object.keys(eachContent)[2]] == false) {
+
+
+                                                    const createBtnContentAndTaskHold = document.createElement('div');
+                                                    createBtnContentAndTaskHold.classList.add('btnContentAndTaskHold');
+                                                    createBtnContentAndTaskHold.dataset.id = eachContent[Object.keys(eachContent)[0]];
+                                                    const createBtnContentModHold = document.createElement('div');
+                                                    createBtnContentModHold.classList.add('btnContentModHold');
+                                                    const createBtnContentHold = document.createElement('div');
+                                                    createBtnContentHold.classList.add('btnContentHold');
+                                                    const createBtnCollectionCheck = document.createElement('button');
+                                                    createBtnCollectionCheck.classList.add('btn-collection-check', 'ms-3');
+                                                    createBtnCollectionCheck.style.border = '3px solid' + eachItem[Object.keys(eachItem)[2]];
+                                                    createBtnContentHold.append(createBtnCollectionCheck);
+                                                    const createInputContent = document.createElement('p');
+                                                    createInputContent.classList.add('inputContent', 'ps-3');
+                                                    createInputContent.innerText = eachContent[Object.keys(eachContent)[1]];
+                                                    createBtnContentHold.append(createInputContent);
+                                                    createBtnContentModHold.append(createBtnContentHold);
+                                                    const btnTaskModHold = document.createElement('div');
+                                                    const btnTaskMod = document.createElement('button');
+                                                    btnTaskMod.classList.add('btn-task-mod','ease-in-out', 'opacity-50');
+                                                    btnTaskMod.innerHTML =
+                                                    `<svg id="task-mod" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle class="circle" cx="12" cy="12" r="1"></circle>
+                                                    <circle class="circle" cx="12" cy="5" r="1"></circle>
+                                                    <circle class="circle" cx="12" cy="19" r="1"></circle>
+                                                    </svg>`;
+                                                    btnTaskModHold.append(btnTaskMod);
+                                                    createBtnContentModHold.append(btnTaskModHold);
+
+                                                    const createTaskCreatedModHold = document.createElement('div');
+                                                    createTaskCreatedModHold.classList.add('taskCreatedModHold');
+
+                                                    const createTaskCreatedMod = document.createElement('div');
+                                                    createTaskCreatedMod.classList.add('taskCreatedMod');
+
+                                                    const createEditTask = document.createElement('p');
+                                                    createEditTask.classList.add('editTask');
+                                                    createEditTask.innerText = 'Edit';
+                                                    createTaskCreatedMod.append(createEditTask);
+
+                                                    const createLine = document.createElement('div');
+                                                    createLine.style.height = '1px';
+                                                    createLine.style.width = '100%';
+                                                    createLine.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+                                                    createTaskCreatedMod.append(createLine);
+
+                                                    const createDelTask = document.createElement('p');
+                                                    createDelTask.classList.add('delTask', 'delete');
+                                                    createDelTask.innerText = 'Delete';
+                                                    createTaskCreatedMod.append(createDelTask);
+                                                    createTaskCreatedModHold.append(createTaskCreatedMod);
+
+                                                    createBtnContentAndTaskHold.append(createBtnContentModHold);
+                                                    createBtnContentAndTaskHold.append(createTaskCreatedModHold);
+                                                    tasksHold.insertBefore(createBtnContentAndTaskHold, taskInputFieldHold);
+                                                }
+                                            });
+                                        });
+                                    }
+                                })
+                            });
+                        }
+                        createdMod();
+                        completedMod();
+                        editPop();
+                        taskCheck();
+                        updateTaskCount();
+                        updateCompletedCount();
+                        updateCollection();
+                        deleteEachTask();
+                     });
+
+        }
+
+        showUnChecked();
+
+        function showChecked() {
+            let users = JSON.parse(localStorage.getItem('users'));
+            let clicked = JSON.parse(localStorage.getItem('clicked'));
+
+            users.forEach(data => {
+                if (data.session == true) {
+                    let collections = data.collections;
+                    collections.forEach(items => {
+                        items.forEach(eachItem => {
+                            if (eachItem[Object.keys(eachItem)[0]] == clicked) {
+                                let todoContent = eachItem[Object.keys(eachItem)[3]];
+                                todoContent.forEach(eachArrray => {
+                                    eachArrray.forEach(eachContent => {
+                                        if (eachContent[Object.keys(eachContent)[2]] == true) {
+
+                                            const completedtasksHold = document.querySelector('.completedtasksHold');
+                                            const createCompletedCreatedContentAndDelHold = document.createElement('div');
+                                            createCompletedCreatedContentAndDelHold.classList.add('completedCreatedContentAndDelHold');
+                                            createCompletedCreatedContentAndDelHold.dataset.id = eachContent[Object.keys(eachContent)[0]];
+
+                                            const createCompletedbtnContentModHold = document.createElement('div');
+                                            createCompletedbtnContentModHold.classList.add('completedbtnContentModHold');
+                                            createCompletedCreatedContentAndDelHold.appendChild(createCompletedbtnContentModHold);
+
+                                            const createCompletedbtnContentHold = document.createElement('div');
+                                            createCompletedbtnContentHold.classList.add('completedbtnContentHold');
+                                            createCompletedbtnContentModHold.appendChild(createCompletedbtnContentHold);
+
+                                            const createCompletedBtnCollectionCheck = document.createElement('i');
+                                            createCompletedBtnCollectionCheck.classList.add('fas', 'fa-check', 'completed-btn-collection-check', 'iconCheck', 'ms-3');
+                                            createCompletedBtnCollectionCheck.style.border = '3px solid' + eachItem[Object.keys(eachItem)[2]];
+                                            createCompletedBtnCollectionCheck.style.backgroundColor = eachItem[Object.keys(eachItem)[2]];
+                                            createCompletedbtnContentHold.appendChild(createCompletedBtnCollectionCheck);
+
+                                            const createCompletedInputContent = document.createElement('p');
+                                            createCompletedInputContent.innerText = eachContent[Object.keys(eachContent)[1]];
+                                            createCompletedInputContent.classList.add('completedInputContent', 'line-through', 'ps-3');
+                                            createCompletedbtnContentHold.appendChild(createCompletedInputContent);
+
+                                            const completedBtnModHold = document.createElement('div');
+                                            createCompletedbtnContentModHold.appendChild(completedBtnModHold);
+
+                                            const createdCompletedBtnTaskMod = document.createElement('button');
+                                            createdCompletedBtnTaskMod.classList.add('completed-btn-task-mod', 'ease-in-out', 'opacity-50');
+                                            createdCompletedBtnTaskMod.innerHTML =
+                                            `<svg id="completed-mod" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                            <circle class="circle" cx="12" cy="12" r="1"></circle>
+                                            <circle class="circle" cx="12" cy="5" r="1"></circle>
+                                            <circle class="circle" cx="12" cy="19" r="1"></circle>
+                                            </svg>`;
+                                            completedBtnModHold.appendChild(createdCompletedBtnTaskMod);
+
+                                            const createCompletedCreatedModHold = document.createElement('div');
+                                            createCompletedCreatedModHold.classList.add('completedCreatedModHold');
+
+
+                                            const createCompletedCreatedMod = document.createElement('div');
+                                            createCompletedCreatedMod.classList.add('completedCreatedMod');
+                                            createCompletedCreatedModHold.appendChild(createCompletedCreatedMod);
+
+                                            const createDelCompleted = document.createElement('p');
+                                            createDelCompleted.classList.add('delCompleted', 'delete');
+                                            createDelCompleted.innerText = 'Delete';
+                                            createCompletedCreatedMod.appendChild(createDelCompleted);
+
+                                            createCompletedCreatedContentAndDelHold.appendChild(createCompletedCreatedModHold);
+                                            completedtasksHold.appendChild(createCompletedCreatedContentAndDelHold);
+                                        }
+                                    });
+                                });
+                            }
+                        })
+                    });
+                }
+                createdMod();
+                completedMod();
+                editPop();
+                completedUncheck();
+                updateTaskCount();
+                updateCompletedCount();
+                updateCollection();
+                deleteEachTask();
+            });
+        }
+
+        showChecked();
+
+        function changeBtnInputTaskColor() {
+            let btnInputTask = document.querySelector('#btnInputTask');
+            let users = JSON.parse(localStorage.getItem('users'));
+            let clicked = JSON.parse(localStorage.getItem('clicked'));
+
+            users.forEach(data => {
+            if (data.session == true) {
+                let collections = data.collections;
+                collections.forEach(items => {
+                    items.forEach(eachItem => {
+                        if (eachItem[Object.keys(eachItem)[0]] == clicked) {
+                            btnInputTask.style.backgroundColor = eachItem[Object.keys(eachItem)[2]];
+                            btnInputTask.style.borderColor = eachItem[Object.keys(eachItem)[2]];
+                        }
+                    });
+
+                });
+            }
+        });
+
+        }
+        changeBtnInputTaskColor();
+
+
+    </script>
+</body>
+</html>

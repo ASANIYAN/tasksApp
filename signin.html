@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sign-in</title>
+</head>
+<body>
+    <main>
+
+        <section id="signup-hold">
+            <div class="container-fluid mt-5">
+                <div class="row mt-5">
+                    <h1 class="heading-sign mt-4">
+                        Sign in.
+                    </h1>
+                </div>
+            </div>
+
+            <form action="">
+                <div class="container-fluid mt-5">
+                    <div class="row">
+                        <div class="input-group mb-3 mt-3">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required>
+                        </div>
+                        <div class="input-group mb-3 mt-3">
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" required>
+                        </div>
+                        <div class="mt-2">
+                            <button type="submit" class="btn btn-sign" id="btnsignin" >Sign in</button>
+                            <p class="mt-5" style="color: rgba(255,255,255,0.8); text-align: center; font-size: 1.2rem; line-height: 100%;">
+                                Don't have an account? <a href="signup.html" style="text-decoration: none;
+                                color: white;"
+                                >Sign up</a>
+                            </p>
+                            <p class="mt-4" style="text-align: center; font-size: 1.2rem; line-height: 100%;">
+                                <a href="index.html" class="" style=" color: rgba(255,255,255,0.8); text-decoration: none;">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Back to Home
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </section>
+
+
+    </main>
+
+    <script>
+        function checkForSignedUser() {
+            let users = JSON.parse(localStorage.getItem('users'));
+            if (!users.length) {
+
+            } else{
+                users.forEach(data => {
+                    if (data.session == true) {
+                        data.session = false;
+                        location.href = 'dashboard.html';
+                    }
+                });
+            }
+        }
+        checkForSignedUser();
+
+        function ifUserExists() {
+            let signIn = document.querySelector('#btnsignin');
+            let email = document.querySelector('#email');
+            let pass = document.querySelector('#password');
+            let users = JSON.parse(localStorage.getItem('users'));
+
+            signIn.addEventListener('click', function(e) {
+                e.preventDefault();
+                users.forEach(data => {
+                    if (String(email.value) == data.user_email  && String(pass.value) == data.user_pass) {
+                        data.session = true;
+                        location.href = 'dashboard.html';
+                    } else {
+                        alert('User does not exist. Please go to the sign uppage to create a new user');
+                    }
+                });
+                localStorage.setItem('users', JSON.stringify(users));
+            })
+        }
+        ifUserExists();
+
+    </script>
+
+</body>
+</html>

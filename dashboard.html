@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Dashboard</title>
+</head>
+<script>
+</script>
+<body>
+
+    <div id="cover"></div>
+    <header class="dash-header">
+        <section class="container-fluid">
+            <div class="row">
+                <div class="header-dash-content-hold pt-2">
+                    <a href="dashboard.html" id="head-dash">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mr-2 text-2xl text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+                        Dashboard
+                    </a>
+                    <a href="" id="head-account">
+                        <i class="fas fa-user-circle pt-2" id="dash_icon_head" style="font-size: 2em;"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+            <section class="container-fluid">
+                <div class="row mt-5">
+                    <div class="content-hold mt-5">
+                        <h1 class="dash-heading mt-5 pt-2">
+                            You have no collections.
+                        </h1>
+
+                        <div class="collection-hold mt-4" id="collectionHold">
+                            <button class="btn btn-first mt-5">
+                                Add Your Collection
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="signed-in" id="sign_in_hold">
+                <div class="container-fluid">
+                    <div>
+                        <p style="font-size: 1.1rem;">Signed in as</p>
+                        <p id="signed-user" style="font-weight: bold; margin-top: -10px; font-size: 1.18rem;">Ayomide Paul Asaniyan</p>
+                    </div>
+                    <div style="height: 1px; width: 100%; background-color:rgba(0, 0, 0, 0.1);"></div>
+                    <div class="mt-2">
+                        <a href="#" style="text-decoration: none; color: rgba(255, 255, 255, 0.5); font-size: 1.1rem;">
+                            Account setting
+                        </a>
+                    </div>
+                    <div class="mt-3" style="height: 1px; width: 100%; background-color:rgba(0, 0, 0, 0.1);"></div>
+                    <div class="mt-2">
+                        <button id="sign-out" role="menuitem">
+                            Sign out
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="collection" id="collection">
+                <form>
+                    <div class="collectionhead-hold">
+                        <h3 class="collectionhead ps-4 pt-4">Add Collection</h3>
+                        <button class="btn btn-X pe-4"><i class="fas fa-times pt-1" id="X"></i></button>
+                    </div>
+                    <div class="mt-3">
+                        <label for="collectionName" class="form-label name-label ps-4">Name</label>
+                        <input type="text" id="collectionName" name="collectionName" class="form-control" placeholder="My Collection" aria-label="collection-Name">
+                    </div>
+                    <div class="mt-3">
+                        <label for="collectionColor" class="form-check-label label-color ps-4">Color</label>
+                        <div class="radio-hold mt-1">
+                            <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#FC76A1" id="first">
+                            <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#DBBE56" id="second">
+                            <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#E39264" id="third">
+                            <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#D25A61" id="fourth">
+                            <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#AE68E6" id="fifth">
+                            <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#70C4BF" id="sixth">
+                            <input type="radio" class="form-check-input color-Select" name="collectionColor" value="#9E7F72" id="seventh">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label for="customColor" class="label-custom ps-4">Custom color</label>
+                        <input type="color" name="customColor" class="form-control form-control-color color-Select mt-2 ms-4" id="customColor" value="#fc76a1" title="Choose your color">
+                    </div>
+                    <div class="btn-hold mt-3">
+                        <button class="btn me-3" id="btn-create">Create</button>
+                        <button class="btn me-3" id="btn-cancel">Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+    </main>
+
+    <footer class="dash-footer">
+        <section class="container-fluid">
+            <div class="row">
+                <div class="foot-dash-content-hold pt-3">
+                    <a href="dashboard.html" id="dash-dash">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mr-2 text-2xl text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
+                        Dashboard
+                    </a>
+                    <a href="" id="dash-account">
+                        <i class="fas fa-user-circle" style="font-size: 1.5em;"></i>
+                        Account
+                    </a>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script>
+
+
+
+        function toNextPage() {
+            let links = document.querySelectorAll('.link');
+            links.forEach(eachLink => {
+                eachLink.addEventListener('click', function(e) {
+                    localStorage.setItem('clicked', JSON.stringify(eachLink.id));
+                    let clicked = JSON.parse(localStorage.getItem('clicked'));
+                    location.href = 'collection.html';
+                })
+            })
+        }
+        toNextPage();
+
+        function textDisplay() {
+            let links = document.querySelectorAll('.link');
+            let dashHeading = document.querySelector('.dash-heading');
+            if (!links.length) {
+                dashHeading.innerText = 'You have no collections';
+            } else {
+                dashHeading.innerText = 'Collections';
+            }
+        }
+        textDisplay();
+
+
+
+        function signedUser() {
+            let signedUser = document.querySelector('#signed-user');
+            JSON.parse(localStorage.getItem('users')).forEach(data => {
+                if (data.session == true) {
+                    signedUser.innerText = data.user_email;
+                }
+            });
+        }
+        signedUser();
+
+        function signOut() {
+            let signedOut = document.querySelector('#sign-out');
+            let users = JSON.parse(localStorage.getItem('users'));
+            signedOut.addEventListener('click', function(e) {
+                users.forEach(data => {
+                    if (data.session == true) {
+                        data.session = false;
+                    }
+                });
+                localStorage.setItem('users', JSON.stringify(users));
+                location.href = 'index.html';
+            })
+        }
+        signOut();
+
+
+        let body = document.querySelector('body');
+        function signInToggle() {
+            let dash_icon_head = document.querySelector('#dash_icon_head');
+            let sign_in_hold = document.querySelector('#sign_in_hold');
+
+            body.addEventListener('click', function (e) {
+                if (!e.target.closest("#sign_in_hold") && e.target.id !== 'dash_icon_head') {
+                    sign_in_hold.classList.remove('visibility');
+                }
+            })
+
+            dash_icon_head.addEventListener('click', function (e) {
+                e.preventDefault();
+                sign_in_hold.classList.toggle('visibility');
+            })
+
+        }
+        signInToggle();
+
+        let btn_first = document.querySelector('.btn-first');
+        function createCollectionTab() {
+            let cover = document.querySelector('#cover');
+            let collection = document.querySelector('#collection');
+            btn_first.addEventListener('click', function (e) {
+                collection.classList.add('visibility');
+                cover.classList.add('cover');
+                body.style.overflow='hidden';
+            })
+            cover.addEventListener('click', function (e) {
+                collection.classList.remove('visibility');
+                cover.classList.remove('cover');
+                body.style.overflow='auto';
+            })
+
+            let btn_cancel = document.querySelector('#btn-cancel');
+            btn_cancel.addEventListener('click', function(e) {
+                e.preventDefault();
+                collection.classList.remove('visibility');
+                cover.classList.remove('cover');
+                body.style.overflow='auto';
+            })
+
+            let btn_X = document.querySelector('#X');
+            btn_X.addEventListener('click', function (e) {
+                e.preventDefault();
+                collection.classList.remove('visibility');
+                cover.classList.remove('cover');
+                body.style.overflow='auto';
+            })
+
+            let collectionColor = document.getElementsByName('collectionColor');
+            let first = document.querySelector('#first');
+            let second = document.querySelector('#second');
+            let third = document.querySelector('#third');
+            let fourth = document.querySelector('#fourth');
+            let fifth = document.querySelector('#fifth');
+            let sixth = document.querySelector('#sixth');
+            let seventh = document.querySelector('#seventh');
+            let customColor = document.querySelector('#customColor');
+
+            window.addEventListener('load', function(e) {
+                first.style.background = first.value;
+                first.checked = true;
+                first.classList.add('clicked');
+            })
+
+            first.addEventListener('click', function(e) {
+                first.style.background = first.value;
+                first.classList.add('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                second.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            second.addEventListener('click', function(e) {
+                second.style.background = second.value;
+                second.classList.add('clicked');
+                first.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            third.addEventListener('click', function(e) {
+                third.style.background = third.value;
+                third.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                second.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            fourth.addEventListener('click', function(e) {
+                fourth.style.background = fourth.value;
+                fourth.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                second.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            fifth.addEventListener('click', function(e) {
+                fifth.style.background = fifth.value;
+                fifth.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                second.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            sixth.addEventListener('click', function(e) {
+                sixth.style.background = sixth.value;
+                sixth.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                second.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                seventh.style.background = 'transparent';
+            })
+
+            seventh.addEventListener('click', function(e) {
+                seventh.style.background = seventh.value;
+                seventh.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                customColor.classList.remove('clicked');
+
+                first.style.background = 'transparent';
+                second.style.background = 'transparent';
+                third.style.background = 'transparent';
+                fourth.style.background = 'transparent';
+                fifth.style.background = 'transparent';
+                sixth.style.background = 'transparent';
+            })
+
+            customColor.addEventListener('click', function(e) {
+                customColor.classList.add('clicked');
+                first.classList.remove('clicked');
+                second.classList.remove('clicked');
+                third.classList.remove('clicked');
+                fourth.classList.remove('clicked');
+                fifth.classList.remove('clicked');
+                sixth.classList.remove('clicked');
+                seventh.classList.remove('clicked');
+            })
+
+        }
+
+        createCollectionTab();
+
+        function createCollection() {
+            let btn_create = document.querySelector('#btn-create');
+            let collectionId = 0;
+            btn_create.addEventListener('click', function(e) {
+                if (document.querySelector('#collectionName').value == '') {
+                    e.preventDefault();
+                    document.querySelector('#collectionName').style.border = '3px solid blue';
+                } else {
+                    e.preventDefault();
+                    collection.classList.remove('visibility');
+                    cover.classList.remove('cover');
+                    let nameCollections = [];
+
+                    let users = JSON.parse(localStorage.getItem('users'));
+                    users.forEach(data => {
+                        if (data.session == true) {
+                            if (!data.collections.length) {
+                                ++collectionId;
+                                let collectionHold = btn_first.parentNode;
+                                const link = document.createElement('a');
+                                link.href = "#";
+                                link.classList.add('link', 'mt-3');
+                                link.setAttribute('id', collectionId);
+                                const collectionAdd = document.createElement('div');
+                                collectionAdd.classList.add('collection-add');
+                                const collectionAdd_div = document.createElement('div');
+                                collectionAdd_div.classList.add('collection-add-div', 'ms-4', 'mt-4');
+                                collectionAdd_div.innerHTML = `
+                                <svg stroke="currentColor" class="mt-3" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" font-size="30px" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"></path></svg>
+                                `;
+                                const collectionTextHold = document.createElement('div');
+                                collectionTextHold.classList.add('collection-text-hold', 'mt-4', 'ms-4');
+                                const heading = document.createElement('h2');
+                                heading.innerText = document.querySelector('#collectionName').value;
+                                link.append(collectionAdd);
+                                collectionAdd.append(collectionAdd_div);
+                                collectionAdd_div.style.background = document.querySelector('.clicked').value;
+                                collectionAdd.append(collectionTextHold);
+                                collectionTextHold.append(heading);
+                                collectionHold.insertBefore(link, btn_first);
+
+                                nameCollections = [{
+                                id: collectionId,
+                                collectionsName: document.querySelector('#collectionName').value,
+                                color: document.querySelector('.clicked').value,
+                                todos: []
+                            }];
+                                data.collections.push(nameCollections);
+                            } else {
+                                let collectionsLength = data.collections.length;
+                                ++collectionsLength;
+                                if (data.id == collectionsLength) {
+                                    ++collectionsLength;
+                                    let collectionHold = btn_first.parentNode;
+                                    const link = document.createElement('a');
+                                    link.href = "#";
+                                    link.classList.add('link', 'mt-3');
+                                    link.setAttribute('id', collectionsLength);
+                                    const collectionAdd = document.createElement('div');
+                                    collectionAdd.classList.add('collection-add');
+                                    const collectionAdd_div = document.createElement('div');
+                                    collectionAdd_div.classList.add('collection-add-div', 'ms-4', 'mt-4');
+                                    collectionAdd_div.innerHTML = `
+                                    <svg stroke="currentColor" class="mt-3" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" font-size="30px" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"></path></svg>
+                                    `;
+                                    const collectionTextHold = document.createElement('div');
+                                    collectionTextHold.classList.add('collection-text-hold', 'mt-4', 'ms-4');
+                                    const heading = document.createElement('h2');
+                                    heading.innerText = document.querySelector('#collectionName').value;
+                                    link.append(collectionAdd);
+                                    collectionAdd.append(collectionAdd_div);
+                                    collectionAdd_div.style.background = document.querySelector('.clicked').value;
+                                    collectionAdd.append(collectionTextHold);
+                                    collectionTextHold.append(heading);
+                                    collectionHold.insertBefore(link, btn_first);
+
+                                    nameCollections = [{
+                                    id: collectionsLength,
+                                    collectionsName: document.querySelector('#collectionName').value,
+                                    color: document.querySelector('.clicked').value,
+                                    todos: []
+                                }];
+                                data.collections.push(nameCollections);
+
+                            } else {
+                                    let collectionHold = btn_first.parentNode;
+                                    const link = document.createElement('a');
+                                    link.href = "#";
+                                    link.classList.add('link', 'mt-3');
+                                    link.setAttribute('id', collectionsLength);
+                                    const collectionAdd = document.createElement('div');
+                                    collectionAdd.classList.add('collection-add');
+                                    const collectionAdd_div = document.createElement('div');
+                                    collectionAdd_div.classList.add('collection-add-div', 'ms-4', 'mt-4');
+                                    collectionAdd_div.innerHTML = `
+                                    <svg stroke="currentColor" class="mt-3" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" font-size="30px" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"></path></svg>
+                                    `;
+                                    const collectionTextHold = document.createElement('div');
+                                    collectionTextHold.classList.add('collection-text-hold', 'mt-4', 'ms-4');
+                                    const heading = document.createElement('h2');
+                                    heading.innerText = document.querySelector('#collectionName').value;
+                                    link.append(collectionAdd);
+                                    collectionAdd.append(collectionAdd_div);
+                                    collectionAdd_div.style.background = document.querySelector('.clicked').value;
+                                    collectionAdd.append(collectionTextHold);
+                                    collectionTextHold.append(heading);
+                                    collectionHold.insertBefore(link, btn_first);
+
+                                    nameCollections = [{
+                                    id: collectionsLength,
+                                    collectionsName: document.querySelector('#collectionName').value,
+                                    color: document.querySelector('.clicked').value,
+                                    todos: []
+                                }];
+                                data.collections.push(nameCollections);
+
+                                }
+
+                            }
+                        }
+                    });
+                    localStorage.setItem('users', JSON.stringify(users));
+                    toNextPage();
+                    textDisplay();
+                }
+            })
+
+        }
+        createCollection();
+
+        function showTable() {
+            if (localStorage.getItem("collections")) {
+                let collectionHold = btn_first.parentNode;
+                JSON.parse(localStorage.getItem('users')).forEach(data => {
+                    if (data.session == true) {
+                        let collections = data.collections;
+                        if (collections.length == 0) {
+                        } else {
+                            collections.forEach(items => {
+                                items.forEach(itemm => {
+                                    let link = document.createElement('a');
+                                    link.classList.add('link', 'mt-3');
+                                    link.href = "#";
+                                    link.setAttribute('id', itemm[Object.keys(itemm)[0]]);
+                                    let collectionAdd = document.createElement('div');
+                                    collectionAdd.classList.add('collection-add');
+                                    let collectionAdd_div = document.createElement('div');
+                                    collectionAdd_div.classList.add('collection-add-div', 'ms-4', 'mt-4');
+                                    collectionAdd_div.innerHTML = `
+                                    <svg stroke="currentColor" class="mt-3" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" font-size="30px" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"></path></svg>
+                                    `;
+                                    let collectionTextHold = document.createElement('div');
+                                    collectionTextHold.classList.add('collection-text-hold', 'mt-4', 'ms-4');
+                                    let heading = document.createElement('h2');
+                                    heading.innerText = itemm[Object.keys(itemm)[1]];
+                                    link.append(collectionAdd);
+                                    collectionAdd.append(collectionAdd_div);
+                                    collectionAdd_div.style.background = itemm[Object.keys(itemm)[2]];
+                                    collectionAdd.append(collectionTextHold);
+                                    collectionTextHold.append(heading);
+                                    collectionHold.insertBefore(link, btn_first);
+                                });
+                            });
+                            toNextPage();
+                            textDisplay();
+
+                        }
+                    }
+                });
+            }
+        }
+        showTable();
+    </script>
+</body>
+</html>

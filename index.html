@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Homepage</title>
+</head>
+<body>
+
+
+    <header class="header d-sm-none d-md-block">
+        <div class="container-fluid">
+            <nav class="nav">
+                <div class="nav-image-link mt-5">
+                    <a href="#" class="pt-2">
+                        <img src="images/tsks-logo-w-type.svg" alt="task-check image">
+                    </a>
+                    <a href="#" class="pt-3" id="features">
+                        Features
+                    </a>
+                </div>
+
+                <div class="nav-links mt-5 pt-3">
+                    <a href="signin.html"  id="signin">
+                        Sign in
+                    </a>
+                    <a href="signup.html" id="signup">
+                        Sign Up
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <sectiion>
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <h1 class="heading mt-5">
+                    Tsks, just tasks<strong style="color: #fb6da9; font-weight: bold">.</strong>
+                </h1>
+                <p class="para mt-4">
+                    Keep track of the daily tasks in life and get that satisfaction upon completion.
+                </p>
+            </div>
+        </div>
+    </sectiion>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <div class="btn-container mt-4">
+                    <a href="signup.html" class="btn btn-started">
+                        Get Started
+                    </a>
+
+                    <a href="#" class="btn btn-learn ms-3">
+                        Learn More
+                    </a>
+                </div>
+
+                <div class="mt-5 sign-container">
+                    <a href="signin.html" class="mt-5">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Sign in
+                    </a>
+
+                    <a href="signup.html" class="mt-5 ms-5">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sign up
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script>
+        function checkForSignedUser() {
+            let users = JSON.parse(localStorage.getItem('users'));
+            if (!users.length) {
+
+            } else{
+                users.forEach(data => {
+                    if (data.session == true) {
+                        data.session = false;
+                        location.href = 'dashboard.html';
+                    }
+                });
+            }
+        }
+        checkForSignedUser();
+    </script>
+</body>
+</html>

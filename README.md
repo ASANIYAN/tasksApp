@@ -1,0 +1,1 @@
+** A multi page site that stores user data on the browser through the use of local-storage API and it is used to make record of tasks to do and completed tasks.  **

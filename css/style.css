@@ -613,6 +613,12 @@ background: rgb(61, 60, 100);
 }
 
 
+@media screen and (max-width:430px) and (min-width: 300px) {
+    .collection {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width:639px) and (min-width: 550px) {
     .collection {
         width: 58%;

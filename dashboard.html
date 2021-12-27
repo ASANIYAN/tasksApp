@@ -102,6 +102,28 @@
                 </form>
             </section>
 
+            <section class="signed-in-small hidden" id="sign_in_hold_small">
+                <div class="container-fluid">
+                    <div>
+                        <p style="font-size: 1.1rem;">Signed in as</p>
+                        <p id="signed-user_small" style="font-weight: bold; margin-top: -10px; font-size: 1.18rem;"></p>
+                    </div>
+                    <div style="height: 1px; width: 100%; background-color:rgba(0, 0, 0, 0.1);"></div>
+                    <div class="mt-2">
+                        <a href="#" style="text-decoration: none; color: rgba(255, 255, 255, 0.5); font-size: 1.1rem;">
+                            Account setting
+                        </a>
+                    </div>
+                    <div class="mt-3" style="height: 1px; width: 100%; background-color:rgba(0, 0, 0, 0.1);"></div>
+                    <div class="mt-2">
+                        <button id="sign-out_small" role="menuitem">
+                            Sign out
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+
     </main>
 
     <footer class="dash-footer">
@@ -112,15 +134,30 @@
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mr-2 text-2xl text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></svg>
                         Dashboard
                     </a>
-                    <a href="" id="dash-account">
-                        <i class="fas fa-user-circle" style="font-size: 1.5em;"></i>
-                        Account
+                    <a href="#" id="dash-account">
+                        <i class="fas fa-user-circle" id="account" style="font-size: 1.5em;"></i>
                     </a>
                 </div>
             </div>
         </section>
     </footer>
     <script>
+
+        function showSignedSmall() {
+            let body = document.querySelector('body');
+            let accountSmall = document.querySelector('#account');
+            let sign_in_hold_small = document.querySelector('#sign_in_hold_small');
+            accountSmall.addEventListener('click', function(e) {
+                e.preventDefault();
+                sign_in_hold_small.classList.toggle('hidden');
+            });
+            body.addEventListener('click', function(e) {
+                if (!e.target.closest("#sign_in_hold_small") && e.target.id !== 'account') {
+                    sign_in_hold_small.classList.add('hidden');
+                }
+            })
+        }
+        showSignedSmall();
 
 
 
@@ -151,9 +188,11 @@
 
         function signedUser() {
             let signedUser = document.querySelector('#signed-user');
+            let signedUser_small = document.querySelector('#signed-user_small');
             JSON.parse(localStorage.getItem('users')).forEach(data => {
                 if (data.session == true) {
                     signedUser.innerText = data.user_email;
+                    signedUser_small.innerText =  data.user_email;
                 }
             });
         }
@@ -168,11 +207,29 @@
                         data.session = false;
                     }
                 });
-                localStorage.setItem('users', JSON.stringify(users));
+
+            localStorage.setItem('users', JSON.stringify(users));
                 location.href = 'index.html';
             })
         }
         signOut();
+
+        function signOutSmall() {
+            let signOut_small = document.querySelector('#sign-out_small');
+            let users = JSON.parse(localStorage.getItem('users'));
+            signOut_small.addEventListener('click', function(e) {
+                users.forEach(data => {
+                    if (data.session == true) {
+                        data.session = false;
+                    }
+                });
+
+            localStorage.setItem('users', JSON.stringify(users));
+            location.href = 'index.html';
+            })
+        }
+        signOutSmall();
+
 
 
         let body = document.querySelector('body');

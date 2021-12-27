@@ -1,7 +1,10 @@
 let signedUser = document.querySelector('#signed-user');
+let signedUser_small = document.querySelector('#signed-user_small');
+
 JSON.parse(localStorage.getItem('users')).forEach(data => {
     if (data.session == true) {
         signedUser.innerText = data.user_email;
+        signedUser_small.innerText =  data.user_email;
     }
 });
 

@@ -577,7 +577,7 @@
         createCollection();
 
         function showTable() {
-            if (localStorage.getItem("collections")) {
+            if (localStorage.getItem("users")) {
                 let collectionHold = btn_first.parentNode;
                 JSON.parse(localStorage.getItem('users')).forEach(data => {
                     if (data.session == true) {

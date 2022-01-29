@@ -10,7 +10,7 @@
     <script defer src="./js/script.js"></script>
     <title>Tasks</title>
 </head>
-<body>
+<body style="height: 100%; min-height: 100%;">
     <div id="coverCollection">
     </div>
     <header class="dash-header">
@@ -29,7 +29,7 @@
         </section>
     </header>
 
-    <main style="height: 100%; overflow-x: hidden; overflow-y: auto; width: 100%;">
+    <main style="height: 100%; overflow-x: hidden; overflow-y: hidden; width: 100%;">
 
         <section class="collection-content">
             <div class="container-fluid">
@@ -195,7 +195,10 @@
     </main>
 
 
-    <footer class="dash-footer">
+    <footer class="dash-footer" style="clear: both;
+    position: relative;
+    height: 90px;
+    margin-top: -90px;">
         <section class="container-fluid">
             <div class="row">
                 <div class="foot-dash-content-hold pt-3">

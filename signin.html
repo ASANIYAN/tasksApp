@@ -82,7 +82,8 @@
                         data.session = true;
                         location.href = 'dashboard.html';
                     } else {
-                        alert('User does not exist. Please go to the sign uppage to create a new user');
+                        alert('User does not exist. Please go to the sign up page to create a new user');
+                        location.href = '';
                     }
                 });
                 localStorage.setItem('users', JSON.stringify(users));

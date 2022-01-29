@@ -13,11 +13,12 @@ html, body {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100%;
+    width: 100%;
     background-color: rgb(24, 24, 32);
 }
 
 main {
-    height: 90vh;
+    height:100vh;
 }
 
 .heading {

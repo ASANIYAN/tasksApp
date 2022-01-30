@@ -438,6 +438,8 @@ body {
 
 .dash-footer {
     background-color: rgba(30, 30, 41, 1);
+    position: absolute;
+    bottom: 0;
     font-weight: 600;
     font-size: 1.2rem;
     width: 100%;
